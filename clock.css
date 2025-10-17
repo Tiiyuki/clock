@@ -1,0 +1,58 @@
+
+/*時計画面PC*/
+
+#date {
+position: absolute;
+top: 200px;
+left: 700px;
+font-size: 70px;
+color: #000;
+}
+
+
+#time {
+font-size: 200px;
+font-weight: bold;
+margin-bottom: 30px;
+align-self: flex-start;
+padding-top: 150px;
+position: absolute;
+top: 100px;
+left: 700px;
+}
+
+
+#timezone {
+font-size: 60px;
+color: #333;
+align-self: center;
+position: absolute;
+left: 800px;
+bottom: 300px;
+}
+
+
+@media (max-width: 768px) {
+#date {
+top: 250px;
+left: 80px;
+font-size: 30px;
+}
+
+
+#time {
+top: 150px;
+left: 60px;
+font-size: 70px;
+}
+
+
+#timezone {
+top: 200px;
+bottom: 100px;
+left: 110px;
+font-size: 25px;
+}
+}
+
+/*時計画面スマホ*/
