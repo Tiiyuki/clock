@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ===============================
    タイマー表示・編集エリアのスタイル
 ================================= */
@@ -323,4 +324,331 @@
 #reset:hover {
   background-color: #eee; /* ホバー時：うすグレー */
 }
+=======
+/* ===============================
+   タイマー表示・編集エリアのスタイル
+================================= */
+
+.timer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 180px;
+  min-height: 100vh;
+}
+
+
+.timer-title {
+  font-size: 70px;        /* タイトルの大きさ */
+  font-weight: bold;      /* 太字 */
+  text-align: center;     /* 中央揃え */
+  margin-bottom: 20px;    /* 下の余白 */
+}
+
+#timer-input {
+  font-size: 150px;
+  font-weight: bold;
+  margin: 30px 0;
+  color: #222;
+  text-align: center;
+  border: 2px dashed #aaa;
+  padding: 10px;
+  border-radius: 8px;
+  width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#timer-input:focus {
+  outline: none;
+  border-color: #666;
+}
+
+
+
+/* ===============================
+   ボタン全体の配置
+================================= */
+
+
+/* ボタン共通スタイル */
+.buttons button {
+  flex: 1;                 /* 横幅を均等に割り当てる */
+  padding: 15px 0;         /* 内側の上下余白（横幅はflexで調整されるので左右は0でOK） */
+  font-size: 24px;         /* 文字サイズ */
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+}
+
+.buttons {
+  display: flex;
+  justify-content: center; /* 横方向で中央寄せ */
+  gap: 20px;               /* ボタン同士の間隔 */
+  margin-top: 20px;        /* タイマーとの間隔 */
+  width: 100%;
+  max-width: 500px;        /* タイマー表示と同じ幅 */
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+
+
+/* Startボタン（黒背景・白文字） */
+#start {
+
+  border: none;
+  background-color: #000;
+  color: #fff;
+ 
+}
+
+#start:hover {
+  background-color: #333; /* ホバー時：少し明るく */
+}
+
+/* Stopボタン（グレー背景・黒文字） */
+#stop {
+
+  border: none;
+  background-color: #ddd;
+  color: #000;
+}
+
+#stop:hover {
+  background-color: #bbb; /* ホバー時：少し濃く */
+}
+
+
+
+
+/* Resetボタン（白背景・黒枠・黒文字） */
+#reset {
+  border: 2px solid #000;
+  background-color: #fff;
+  color: #000;
+
+}
+
+#reset:hover {
+  background-color: #eee;
+}
+
+/* ===============================
+   ポップアップ用の共通ボタンデザイン
+================================= */
+#pause-overlay {
+  display: none;  /* ← 初期状態は非表示！これが正解！ */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.popup-buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.popup-buttons button {
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #aaa;
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.popup-buttons button:hover {
+  background-color: #666;
+}
+
+#pause-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: white;
+  padding: 30px 40px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 300px;
+}
+
+#pause-text {
+  background: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  color: black;
+  margin-bottom: 20px;
+}
+
+
+/* ✕ボタン専用：右上配置用 */
+#pause-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  color: #ccc;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#pause-close-btn:hover {
+  color: #fff;
+}
+
+
+/* ===============================
+   タイマー終了ポップアップ（#timer-popup）
+================================= */
+#timer-popup {
+  display: none;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #222;
+  color: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  text-align: center;
+  z-index: 9999;
+  box-shadow: 0 0 15px #000;
+}
+
+
+
+
+
+
+
+
+
+/*スマホ対応*/
+
+@media (max-width: 768px) {
+
+  #timer-input {
+  font-size: 100px;
+  font-weight: bold;
+  margin: 30px 0;
+  color: #222;
+  text-align: center;
+  border: 2px dashed #aaa;
+  padding: 10px;
+  border-radius: 8px;
+  width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#timer-input:focus {
+  outline: none;
+  border-color: #666;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+   .timer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 230px;
+  min-height: 100vh;
+}
+
+  .timer-title {
+  font-size: 28px;        /* タイトルの大きさ */
+  font-weight: bold;      /* 太字 */
+  text-align: center;     /* 中央揃え */
+  margin-bottom: 20px;    /* 下の余白 */
+}
+
+
+/* ===============================
+   ボタン全体の配置
+================================= */
+.buttons {
+  display: flex;
+    justify-content: space-between;
+    max-width: 300px;  /* スマホでは幅を小さめに */
+    gap: 10px;         /* ボタン間隔を少し狭める */
+    max-width: 320px;  /* ← timer-display と揃える */
+    margin: 0 auto;
+}
+
+  .buttons button {
+    flex: 1;                 /* 均等幅 */
+    font-size: 18px;         /* スマホ用の文字サイズ */
+    padding: 12px 15px;      /* 上下12px＋左右15px → 内側余白を確保 */
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+  }
+
+/* Startボタン（黒背景・白文字） */
+#start {
+   border: none;
+  background-color: #000;
+  color: #fff;
+}
+
+#start:hover {
+   background-color: #333;
+}
+
+/* Stopボタン */
+#stop {
+  border: none;
+  background-color: #ddd;
+  color: #000;
+}
+#stop:hover {
+  background-color: #bbb;
+}
+
+/* Resetボタン（白背景・黒枠・黒文字） */
+#reset {
+  border: 2px solid #000;
+  background-color: #fff;
+  color: #000;
+}
+
+#reset:hover {
+  background-color: #eee; /* ホバー時：うすグレー */
+}
+>>>>>>> 29a5099 (バグ修正)
 }

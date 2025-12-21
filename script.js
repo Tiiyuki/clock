@@ -1,5 +1,6 @@
 
 
+
 // ========== 一次表示機能 ==========
 
 function showContent(id, button) {
@@ -365,7 +366,13 @@ updateReminderBtn.addEventListener("click", () => {
 
   reminders = reminders.map((r) =>
     r.id === currentEditingId
-      ? { ...r, text: title, datetime: `${date} ${time}` }
+      ? { ...r, text: title, 
+        datetime: `${date} ${time}`,
+        completed: false,
+        notified: false 
+
+
+      }
       : r
   );
 
@@ -524,3 +531,4 @@ flatpickr("#edit-time", {
   dateFormat: "H:i",
   time_24hr: true,
 });
+>>>>>>> 29a5099 (バグ修正)

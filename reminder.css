@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ===============================
 📋 リマインダー メイン画面スタイル
 =============================== */
@@ -462,3 +463,469 @@ audio {
 
 
 }
+=======
+/* ===============================
+📋 リマインダー メイン画面スタイル
+=============================== */
+
+/* 📦 リマインダーページ全体 */
+.reminder-wrapper {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 500px;
+  margin: 0 auto;
+  position: absolute;
+  top: 30px;
+  left: 300px;
+}
+
+/* ⭐NEW 通知設定行 */
+.notify-row {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.notify-row label {
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.notify-row select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* ⭐NEW 音声タグは非表示 */
+audio {
+  display: none;
+}
+
+
+/* 📝 ページタイトル */
+.reminder-wrapper h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* 🎛 ボタンの並び */
+.reminder-controls {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+/* ➕ タスク追加ボタン */
+.add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  line-height: 1;
+  white-space: nowrap;
+  padding: 10px 100px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.add-btn:hover {
+  background-color: #eee;
+}
+
+/* 👁️ 完了タスク切替ボタン */
+.toggle-btn {
+  padding: 10px 70px;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 6px;
+  font-size: 30px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  flex: 1;
+  white-space: nowrap;
+}
+
+.toggle-btn:hover {
+  background-color: #d5d5d5;
+}
+
+/* 📋 リスト全体 */
+.reminder-list {
+  list-style: none;
+  margin-top: 16px;
+  padding: 0;
+}
+
+/* 🟢 タスク1件ごとの行 */
+.reminder-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+/* ✨追加：チェックマーク（○ or ✓） */
+.checkmark {
+  display: inline-block;
+  width: 24px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #555;
+  margin-right: 10px;
+  user-select: none;
+}
+
+/* ✅ 完了済み（✓の色変更＆取り消し線） */
+.completed span {
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+.completed .checkmark {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+/* ===============================
+🪟 モーダルウィンドウ（共通）
+=============================== */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* 💬 モーダルの中身 */
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 24px;
+  border-radius: 10px;
+  max-width: 400px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* 📝 モーダルタイトル */
+.modal-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #333;
+}
+
+/* 🧱 入力フォーム共通 */
+.modal-content input[type="text"],
+.modal-content input[type="date"],
+.modal-content input[type="time"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* 💡 日付＋時間を横並びに */
+.datetime-row {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.date-group,
+.time-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.date-group label,
+.time-group label {
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+  color: #555;
+}
+
+/* ⚠️ エラー表示 */
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  display: none;
+}
+
+/* 🔘 モーダル下部ボタン */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top:20px;
+
+}
+
+
+/* ✅ 登録／保存ボタン */
+#save-reminder,
+#update-reminder {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  flex: 1;
+}
+
+#save-reminder:hover,
+#update-reminder:hover {
+  background-color: #45a049;
+}
+
+/* ✖ キャンセル・削除ボタン */
+.cancel-btn,
+#delete-reminder {
+  background-color: #ddd;
+  border: none;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.cancel-btn:hover,
+#delete-reminder:hover {
+  background-color: #ccc;
+}
+
+/*ポップアップ編集画面*/
+/* ===============================
+🎯 編集モーダル専用レイアウト
+=============================== */
+#edit-modal .modal-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding-top: 20px;
+}
+
+#edit-modal .modal-buttons button {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+/* ✅ ボタンカラー */
+#edit-modal #update-reminder {
+  background-color: #4CAF50; /* 保存 */
+}
+#edit-modal #update-reminder:hover {
+  background-color: #45A049;
+}
+
+#edit-modal #complete-reminder {
+  background-color: #2196F3; /* 完了 */
+}
+#edit-modal #complete-reminder:hover {
+  background-color: #1976D2;
+}
+
+#edit-modal #delete-reminder {
+  background-color: #F44336; /* 削除 */
+}
+#edit-modal #delete-reminder:hover {
+  background-color: #D32F2F;
+}
+
+#edit-modal #close-edit {
+  background-color: #9E9E9E; /* 閉じる */
+}
+#edit-modal #close-edit:hover {
+  background-color: #757575;
+}
+
+/*完了ボタン*/
+#complete-reminder {
+  background-color: #2196F3; /* 青色で完了を表現 */
+  color: #fff;
+}
+
+#complete-reminder:hover {
+  background-color: #1976D2;
+}
+/* ===============================
+🎯 編集モーダル専用：閉じるボタンのサイズ統一
+=============================== */
+#edit-modal #close-edit {
+  padding: 12px 0;         /* ← 他ボタンと同じ高さ */
+  font-size: 1.1rem;       /* ← バランス調整 */
+  width: 100%;             /* ← グリッド内で横幅を合わせる */
+  background-color: #9E9E9E;
+}
+
+#edit-modal #close-edit:hover {
+  background-color: #757575;
+}
+
+/* ===============================
+🎯 編集モーダルの全ボタン統一（保存・完了・削除・閉じるすべて）
+=============================== */
+#edit-modal .modal-buttons button {
+  padding: 10px 0 !important;
+  font-size: 1.05rem !important;
+  height: 45px !important; /* ← 全体の高さを明示指定 */
+  border-radius: 6px !important;
+  width: 100% !important;
+}
+
+
+
+/* ===============================
+🔔 通知ポップアップ
+=============================== */
+/* リマインダーポップアップ（白く・中央に・OKボタン中央） */
+#reminder-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  color: black;
+  padding: 30px 40px;
+  border-radius: 12px;
+  text-align: center;
+  z-index: 9999;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  min-width: 300px;
+  position: fixed;
+}
+
+#reminder-popup-message {
+  background: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* ボタン配置を中央下に */
+#reminder-popup .popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+/* ボタンの見た目 */
+#ok-popup-btnn {
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #aaa;
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+/* ✕ボタンだけ右上に配置 */
+#close-popup {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: #ccc;
+}
+
+#close-popup:hover {
+  color: #000;
+}
+
+/* ===============================
+📱 レスポンシブ対応
+=============================== */
+@media (max-width: 768px) {
+  .reminder-wrapper {
+    max-width: 300px;
+    left: 20px;
+  }
+
+  .reminder-controls {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .add-btn, .toggle-btn {
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+
+  .modal-content {
+    max-width: 90%;
+    margin-top: 20%;
+  }
+
+
+  /*ポップアップ*/
+ @media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .datetime-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .notify-row {
+    margin-top: 10px;
+  }
+
+  .popup {
+  max-width: 80vw;           /* 画面幅に応じて自動調整 */
+  min-width: 250px;          /* 小さすぎないように固定幅 */
+  word-break: keep-all;      /* 日本語の不自然な改行を防止 */
+  white-space: normal;       /* 通常の改行ルール */
+  text-align: center;        /* メッセージを中央揃え */
+  line-height: 1.4;          /* 読みやすさアップ */
+}
+
+ #reminder-popup-message {
+    font-size: 15px;
+ }
+}
+
+
+
+
+}
+>>>>>>> 29a5099 (バグ修正)

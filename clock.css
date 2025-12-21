@@ -1,11 +1,21 @@
 
+
 /*時計画面PC*/
 
+@media (min-width: 1025px){
+
+#clock{
+    width:1000px;
+    align-self:center;
+    position: absolute;
+    top:100px;
+
+}
+
 #date {
-position: absolute;
-top: 200px;
-left: 700px;
-font-size: 70px;
+
+width:800px;
+font-size: 50px;
 color: #000;
 }
 
@@ -13,46 +23,107 @@ color: #000;
 #time {
 font-size: 200px;
 font-weight: bold;
-margin-bottom: 30px;
-align-self: flex-start;
-padding-top: 150px;
-position: absolute;
-top: 100px;
-left: 700px;
+width:800px;
+
 }
 
 
 #timezone {
 font-size: 60px;
-color: #333;
-align-self: center;
-position: absolute;
-left: 800px;
-bottom: 300px;
+
+}
+
 }
 
 
-@media (max-width: 768px) {
+
+
+/*時計画面タブレット*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    html{
+         font-size: 15px;  
+    }
+
+
+    #clock{
+    display: flex;
+    width: 50%;
+    align-self:center;
+    justify-content: center; 
+    position: absolute;
+    position: absolute;
+    top:100px;
+
+}
+
 #date {
-top: 250px;
-left: 80px;
-font-size: 30px;
+
+width:100%;
+font-size: 3rem;
+color: #000;
 }
 
 
 #time {
-top: 150px;
-left: 60px;
-font-size: 70px;
+font-size: 7rem;
+font-weight: bold;
+width:100%;
+
 }
 
 
 #timezone {
-top: 200px;
-bottom: 100px;
-left: 110px;
-font-size: 25px;
+font-size: 3rem;
+width:100%;
+
 }
 }
 
-/*時計画面スマホ*/
+/*スマホ用*/
+
+@media (max-width: 767px){
+
+
+
+    html{
+         font-size: 14px;  /* スマホ用に少し小さめに調整 */
+    }
+
+     #clock{
+     display: flex;
+    width: 70%;
+    align-self:center;
+    justify-content: center; 
+    position: absolute;
+
+
+}
+
+#date {
+
+width:100%;
+font-size: 2rem;
+color: #000;
+}
+
+
+#time {
+font-size: 4rem;
+font-weight: bold;
+width:100%;
+
+}
+
+
+#timezone {
+font-size: 2rem;
+width: 100%;
+
+
+}
+
+}
+
+

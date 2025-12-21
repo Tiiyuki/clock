@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -80,7 +81,7 @@
   <!-- タイマー表示 -->
   <input id="timer-input" type="text" value="25:00">
 
-<!-- 一時停止時のオーバーレイ＋メッセージ -->
+<!-- 一時停止時のオーバーレイ＋メッセージ 
 <div id="pause-overlay">
   <div id="pause-message">
     <span id="pause-text">一時停止中です</span>
@@ -90,6 +91,10 @@
     </div>
   </div>
 </div>
+
+-->
+
+
 
 
   <!-- ボタン -->
@@ -233,11 +238,26 @@
     <button id="close-popup">✕</button>
   </div>
 </div>
+</main>
 
 
 <!-- 🎵 通知音（ぴろん♪など） -->
 <audio id="notify-sound" src="audio/notify.wav" preload="auto"></audio>
 
+<!-- 一時停止時のオーバーレイ＋メッセージ -->
+<div id="pause-overlay">
+  <div id="pause-message">
+    <span id="pause-text">一時停止中です</span>
+    <div class="popup-buttons">
+      <button id="pause-ok-btn">OK</button>
+      <button id="pause-close-btn">✕</button>
+    </div>
+  </div>
+</div>
+
+
+
 </body>
 </html>
 
+>>>>>>> 29a5099 (バグ修正)
